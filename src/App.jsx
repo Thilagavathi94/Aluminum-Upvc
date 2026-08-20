@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import { DataProvider } from './context/DataContext'
 
 import PublicLayout from './components/PublicLayout'
@@ -25,10 +26,27 @@ import AdminTeam from './admin/Team'
 import AdminWebsiteContent from './admin/WebsiteContent'
 import AdminSettings from './admin/Settings'
 
+function DeepLinkRedirect() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const route = params.get('route')
+    if (!route || !route.startsWith('/admin')) return
+
+    params.delete('route')
+    const search = params.toString()
+    navigate(`${route}${search ? `?${search}` : ''}`, { replace: true })
+  }, [navigate])
+
+  return null
+}
+
 export default function App() {
   return (
     <DataProvider>
       <BrowserRouter>
+        <DeepLinkRedirect />
         <Routes>
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />
