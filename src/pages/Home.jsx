@@ -12,6 +12,27 @@ import { whyChooseUs, processSteps } from '../data/aluminiumData'
 
 const whyIcon = { shield: FiShield, ruler: FiTool, team: FiUsers, support: FiHeadphones }
 
+const offers = [
+  {
+    title: 'Window Upgrade Pack',
+    label: 'Free Site Visit',
+    description: 'Book aluminium or uPVC windows and get measurement, design advice and estimate support at your home.',
+    image: '/assets/services/south-indian-upvc-windows-doors.png',
+  },
+  {
+    title: 'Kitchen Cabinet Deal',
+    label: 'Modular Bundle',
+    description: 'Special pricing for aluminium kitchen cabinets with loft storage, wall units and moisture-safe panels.',
+    image: '/assets/services/south-indian-aluminium-kitchen-cabinets.png',
+  },
+  {
+    title: 'Balcony Comfort Combo',
+    label: 'Mesh + Glass',
+    description: 'Combine mosquito mesh windows with sliding systems or balcony glass for fresh air and better protection.',
+    image: '/assets/services/south-indian-mesh-balcony.png',
+  },
+]
+
 export default function Home() {
   const { content, services, projects, testimonials, gallery } = useData()
   const published = testimonials.filter((t) => t.status === 'Published')
@@ -27,7 +48,7 @@ export default function Home() {
         <div className="container-page relative py-16 md:py-20 grid lg:grid-cols-[1.05fr_.95fr] gap-10 items-center">
           <div>
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="eyebrow text-gold-400 mb-4">
-            Aluminium &amp; UPVC Specialists
+            Aluminium &amp; uPVC Home Specialists
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
@@ -80,7 +101,7 @@ export default function Home() {
             className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 text-sm text-white/70"
           >
             <span className="flex items-center gap-1.5 font-semibold text-white/85"><FiGrid className="text-gold-400" /> What we build:</span>
-            {(content.heroServices || ['Windows', 'Doors', 'Glass Facades', 'Partitions']).map((item) => (
+            {(content.heroServices || ['Aluminium Windows', 'uPVC Windows', 'Sliding Systems', 'Kitchen Cabinets']).map((item) => (
               <a key={item} href="#services" className="hover:text-gold-400 transition-colors underline decoration-white/20 underline-offset-4">
                 {item}
               </a>
@@ -97,7 +118,7 @@ export default function Home() {
               <div className="absolute -inset-5 rounded-2xl bg-gold-400/20 blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl image-sheen">
                 <video
-                  src={content.showcaseVideo || 'https://videos.pexels.com/video-files/7578547/7578547-uhd_2560_1440_30fps.mp4'}
+                  src={content.showcaseVideo || 'https://videos.pexels.com/video-files/7331407/7331407-hd_1920_1080_25fps.mp4'}
                   autoPlay
                   muted
                   loop
@@ -107,7 +128,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-navy-950/90 to-transparent">
                   <p className="flex items-center gap-2 text-sm font-semibold"><FiPlayCircle className="text-gold-400" /> Live finish preview</p>
-                  <p className="text-xs text-white/65 mt-1">Auto-playing HD motion for a premium facade feel.</p>
+                  <p className="text-xs text-white/65 mt-1">Auto-playing HD motion for a residential window feel.</p>
                 </div>
               </div>
             </div>
@@ -130,7 +151,7 @@ export default function Home() {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mt-2">Premium aluminium design, precise fabrication, clean installation.</h2>
             <p className="text-ink-600 mt-5 leading-relaxed">{content.aboutContent}</p>
             <div className="grid sm:grid-cols-2 gap-4 mt-7">
-              {['Marine-grade finishes', 'Custom site measurements', 'Commercial load planning', 'After-sales support'].map((item) => (
+              {['Weather-safe finishes', 'Custom site measurements', 'Home-ready fabrication', 'After-sales support'].map((item) => (
                 <div key={item} className="animated-card rounded-xl bg-white border border-ink-400/10 p-4 flex items-center gap-3">
                   <span className="w-9 h-9 rounded-lg bg-gold-500 text-navy-950 flex items-center justify-center"><FiCheck /></span>
                   <span className="text-sm font-semibold text-navy-900">{item}</span>
@@ -151,7 +172,7 @@ export default function Home() {
       {/* SERVICES */}
       <section id="services" className="section-py bg-white">
         <div className="container-page">
-          <SectionHeading eyebrow="Our Services" title="High-quality Aluminium & UPVC solutions" subtitle="Tailored to your needs, from single windows to full commercial facades." />
+          <SectionHeading eyebrow="Our Services" title="Home aluminium & uPVC solutions" subtitle="Residential windows, doors, sliding systems, kitchen cabinets, wardrobes, bathroom fittings and balcony glass for South Indian homes." />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {services.slice(0, 10).map((s, i) => <ServiceCard key={s.id} service={s} index={i} />)}
           </div>
@@ -163,6 +184,47 @@ export default function Home() {
                 {s.name}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OFFERS */}
+      <section id="offers" className="section-py bg-mist-50 overflow-hidden">
+        <div className="container-page">
+          <SectionHeading eyebrow="Offers" title="Home upgrade offers" subtitle="Simple bundles for the products customers ask for most: windows, kitchens, mesh and balcony solutions." />
+          <div className="grid md:grid-cols-3 gap-6">
+            {offers.map((offer, i) => {
+              return (
+                <motion.div
+                  key={offer.title}
+                  initial={{ opacity: 0, y: 26, rotateX: -8 }}
+                  whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+                  whileHover={{ y: -10, rotate: i === 1 ? 0 : i === 0 ? -1 : 1 }}
+                  className="group animated-card bg-white rounded-xl border border-ink-400/10 card-shadow overflow-hidden"
+                >
+                  <div className="relative h-52 image-sheen">
+                    <img src={offer.image} alt={offer.title} className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/15 to-transparent" />
+                    <div className="absolute left-4 top-4 rounded-full bg-gold-500 text-navy-950 px-4 py-1.5 text-xs font-bold shadow-lg">
+                      {offer.label}
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-bold text-navy-900">{offer.title}</h3>
+                    <p className="text-sm text-ink-600 leading-relaxed mt-2">{offer.description}</p>
+                    <motion.a
+                      href="#quote"
+                      whileHover={{ x: 4 }}
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-navy-900 hover:text-gold-600 transition-colors"
+                    >
+                      Claim offer <FiArrowRight />
+                    </motion.a>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>

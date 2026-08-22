@@ -1,12 +1,16 @@
 export default function BrandLogo({ compact = false }) {
   return (
     <div className="flex items-center gap-2.5">
-      <div className="brand-mark" aria-hidden="true">
-        <span className="brand-mark__beam brand-mark__beam--one" />
-        <span className="brand-mark__beam brand-mark__beam--two" />
-        <span className="brand-mark__letters">A</span>
-      </div>
-      {!compact && <span className="font-display font-bold text-lg text-white tracking-tight">AluPro</span>}
+      <img
+        src="/assets/brand/alupro-logo.png"
+        alt="AluPro Aluminium and uPVC Solutions"
+        className={`${compact ? 'h-11 w-11' : 'h-12 w-12'} rounded-full object-contain bg-white shadow-lg ring-1 ring-white/25`}
+      />
+      {!compact && (
+        <span className="font-display font-bold text-lg text-white tracking-tight leading-tight">
+          AluPro
+        </span>
+      )}
     </div>
   )
 }

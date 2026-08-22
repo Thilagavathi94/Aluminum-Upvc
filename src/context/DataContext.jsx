@@ -22,22 +22,25 @@ const KEYS = {
   content: 'alupro_content',
   enquiries: 'alupro_enquiries',
   auth: 'alupro_admin_auth',
-  visualRefresh: 'alupro_visual_refresh_20260820',
+  visualRefresh: 'alupro_visual_refresh_20260822_home_solutions',
 }
 
 function visualRefresh(value, defaults, imageFields = ['image']) {
   if (typeof localStorage === 'undefined' || localStorage.getItem(KEYS.visualRefresh)) return value
   const byId = new Map(defaults.map((item) => [item.id, item]))
-  return value.map((item) => {
+  const seen = new Set(value.map((item) => item.id))
+  const refreshed = value.map((item) => {
     const fresh = byId.get(item.id)
     if (!fresh) return item
-    const patch = {}
+    const patch = { ...fresh }
     imageFields.forEach((field) => {
       if (fresh[field]) patch[field] = fresh[field]
     })
     if (fresh.gallery) patch.gallery = fresh.gallery
     return { ...item, ...patch }
   })
+  const additions = defaults.filter((item) => !seen.has(item.id))
+  return [...refreshed, ...additions]
 }
 
 function visualRefreshContent(value) {
@@ -46,6 +49,9 @@ function visualRefreshContent(value) {
     ...value,
     heroTitle: defaultWebsiteContent.heroTitle,
     heroDescription: defaultWebsiteContent.heroDescription,
+    heroServices: defaultWebsiteContent.heroServices,
+    aboutContent: defaultWebsiteContent.aboutContent,
+    seo: defaultWebsiteContent.seo,
     heroImages: defaultWebsiteContent.heroImages,
     showcaseVideo: defaultWebsiteContent.showcaseVideo,
   }

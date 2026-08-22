@@ -23,8 +23,8 @@ export default function About() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            src="https://picsum.photos/seed/about-main/900/700"
-            alt="AluPro workshop"
+            src="/assets/services/south-indian-aluminium-windows.png"
+            alt="South Indian home aluminium window installation"
             className="rounded-2xl card-shadow w-full h-[420px] object-cover"
           />
           <div>

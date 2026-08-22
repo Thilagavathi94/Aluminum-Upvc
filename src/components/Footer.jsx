@@ -50,10 +50,10 @@ export default function Footer() {
           <h4 className="text-white font-display font-semibold mb-4">Our Services</h4>
           <ul className="space-y-2 text-sm">
             <li>Aluminium Windows &amp; Doors</li>
-            <li>UPVC Windows &amp; Doors</li>
-            <li>Glass Facades &amp; Partitions</li>
+            <li>uPVC Windows &amp; Doors</li>
             <li>Sliding Systems</li>
-            <li>Skylights &amp; Railings</li>
+            <li>Kitchen Cabinets &amp; Wardrobes</li>
+            <li>Bathroom &amp; Balcony Solutions</li>
           </ul>
         </div>
 

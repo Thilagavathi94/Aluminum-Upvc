@@ -7,15 +7,33 @@ import ServiceCard from '../components/ServiceCard'
 export default function Services() {
   const { services } = useData()
   const published = services.filter((s) => s.status !== 'Hidden')
+  const homeServices = published.filter((s) => s.category !== 'Commercial Solutions')
+  const commercialServices = published.filter((s) => s.category === 'Commercial Solutions')
 
   return (
     <div>
       <PageHeader title="Our Services" />
       <section className="section-py bg-white">
         <div className="container-page">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {published.map((s, i) => <ServiceCard key={s.id} service={s} index={i} />)}
+          <div className="mb-10">
+            <p className="eyebrow">Home Solutions</p>
+            <h2 className="font-display text-3xl font-bold text-navy-900 mt-2">Products for modern South Indian homes</h2>
           </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            {homeServices.map((s, i) => <ServiceCard key={s.id} service={s} index={i} />)}
+          </div>
+
+          {commercialServices.length > 0 && (
+            <div className="mt-16">
+              <div className="mb-8">
+                <p className="eyebrow">Commercial Solutions</p>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-navy-900 mt-2">Advanced glass and facade work</h2>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                {commercialServices.map((s, i) => <ServiceCard key={s.id} service={s} index={i} />)}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
