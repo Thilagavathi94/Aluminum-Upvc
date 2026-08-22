@@ -63,7 +63,7 @@ export default function About() {
                 <div className="p-5">
                   <h3 className="font-display font-semibold text-navy-900">{m.name}</h3>
                   <p className="text-sm text-gold-600 font-medium">{m.designation}</p>
-                  <p className="text-xs text-ink-600 mt-1">{m.experience}</p>
+                  <p className="text-sm text-ink-600 mt-1">{m.experience}</p>
                 </div>
               </motion.div>
             ))}

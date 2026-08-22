@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiShield, FiTool, FiUsers, FiHeadphones, FiArrowRight, FiCheck, FiPlayCircle, FiPhoneCall } from 'react-icons/fi'
+import { FiShield, FiTool, FiUsers, FiHeadphones, FiArrowRight, FiCheck, FiPlayCircle, FiPhoneCall, FiGrid } from 'react-icons/fi'
 import { useData } from '../context/DataContext'
 import Stats from '../components/Stats'
 import ServiceCard from '../components/ServiceCard'
@@ -67,8 +67,24 @@ export default function Home() {
               <a href="#quote" className="btn-gold">Get a Quote</a>
             </motion.span>
             <motion.span whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+              <a href="#services" className="btn-outline">Explore Services</a>
+            </motion.span>
+            <motion.span whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
               <a href="#projects" className="btn-outline">View Our Work</a>
             </motion.span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
+            className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 text-sm text-white/70"
+          >
+            <span className="flex items-center gap-1.5 font-semibold text-white/85"><FiGrid className="text-gold-400" /> What we build:</span>
+            {(content.heroServices || ['Windows', 'Doors', 'Glass Facades', 'Partitions']).map((item) => (
+              <a key={item} href="#services" className="hover:text-gold-400 transition-colors underline decoration-white/20 underline-offset-4">
+                {item}
+              </a>
+            ))}
           </motion.div>
           </div>
           <motion.div
@@ -182,7 +198,7 @@ export default function Home() {
                     <Icon className="text-3xl text-gold-400 mx-auto mb-3" />
                   </motion.div>
                   <h3 className="font-semibold">{w.title}</h3>
-                  <p className="text-xs text-white/60 mt-1.5">{w.description}</p>
+                  <p className="text-sm text-white/60 mt-1.5 leading-relaxed">{w.description}</p>
                 </motion.div>
               )
             })}
@@ -207,7 +223,7 @@ export default function Home() {
               >
                 <span className="font-display text-2xl font-bold text-gold-500">0{s.step}</span>
                 <h3 className="font-semibold text-navy-900 mt-2">{s.title}</h3>
-                <p className="text-xs text-ink-600 mt-1.5">{s.description}</p>
+                <p className="text-sm text-ink-600 mt-1.5 leading-relaxed">{s.description}</p>
               </motion.div>
             ))}
           </div>
@@ -241,7 +257,7 @@ export default function Home() {
                 <img src={item.image} alt={item.title} className="h-full min-h-48 w-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-navy-950/90 to-transparent">
                   <p className="font-semibold text-sm">{item.title}</p>
-                  <p className="text-xs text-white/60">{item.category}</p>
+                  <p className="text-sm text-white/60">{item.category}</p>
                 </div>
               </motion.div>
             ))}

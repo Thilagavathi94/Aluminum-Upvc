@@ -282,8 +282,9 @@ export const defaultTeam = [
 export const defaultWebsiteContent = {
   companyName: 'AluPro',
   logoText: 'AluPro',
-  heroTitle: 'Premium Aluminium Spaces. Built to Shine.',
-  heroDescription: 'HD-finish aluminium, UPVC and architectural glass solutions for villas, apartments, storefronts and commercial facades.',
+  heroTitle: 'Aluminium & UPVC Windows, Doors and Facades — Designed, Made and Installed by Us.',
+  heroDescription: 'We design, fabricate and install aluminium and UPVC windows, doors, partitions and glass facades for homes and businesses — from a single window to a full commercial building.',
+  heroServices: ['Windows', 'Doors', 'Glass Facades', 'Partitions'],
   aboutContent:
     'We specialise in high-quality Aluminium and UPVC doors, windows, partitions and glazing solutions. With 10+ years of experience, we deliver products that combine strength, style and performance for homes and businesses across South India.',
   phone: '+91 98765 43210',

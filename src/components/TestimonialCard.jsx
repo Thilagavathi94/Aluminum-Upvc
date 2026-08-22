@@ -20,7 +20,7 @@ export default function TestimonialCard({ testimonial, index = 0 }) {
         <img src={testimonial.photo} alt={testimonial.name} className="w-11 h-11 rounded-full object-cover" />
         <div>
           <p className="font-semibold text-navy-900 text-sm">{testimonial.name}</p>
-          <p className="text-xs text-ink-600">{testimonial.project}</p>
+          <p className="text-sm text-ink-600">{testimonial.project}</p>
         </div>
       </div>
     </motion.div>
