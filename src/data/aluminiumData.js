@@ -1,4 +1,4 @@
-// Seed / default data for AluPro. This is what ships on first load,
+// Seed / default data for VETRI. This is what ships on first load,
 // and is then copied into localStorage so the admin panel can edit it.
 
 const img = (id, w = 1200, h = 800) =>
@@ -349,7 +349,7 @@ export const defaultGallery = [
 ]
 
 export const defaultTestimonials = [
-  { id: 't1', name: 'Ramesh Kumar', project: 'Modern Villa, Coimbatore', review: 'AluPro transformed our home with beautiful, durable aluminium windows. The team was professional from quote to installation.', rating: 5, status: 'Published', photo: img('1507003211169-0a1dd7228f2d', 200, 200) },
+  { id: 't1', name: 'Ramesh Kumar', project: 'Modern Villa, Coimbatore', review: 'VETRI transformed our home with beautiful, durable aluminium windows. The team was professional from quote to installation.', rating: 5, status: 'Published', photo: img('1507003211169-0a1dd7228f2d', 200, 200) },
   { id: 't2', name: 'Sangeetha R', project: 'Luxury Apartment, Bangalore', review: 'Excellent uPVC window installation. Our apartment is noticeably quieter and cooler now. Highly recommend.', rating: 5, status: 'Published', photo: img('1494790108377-be9c29b29330', 200, 200) },
   { id: 't3', name: 'Arvind Menon', project: 'Office Building, Chennai', review: 'The glass facade work was completed on schedule and looks stunning. Great communication throughout the project.', rating: 4, status: 'Published', photo: img('1472099645785-5658abf4ff4e', 200, 200) },
   { id: 't4', name: 'Karthik S', project: 'Sliding Door System', review: 'Very happy with the sliding door system, smooth operation and great finish quality.', rating: 5, status: 'Hidden', photo: img('1438761681033-6461ffad8d80', 200, 200) },
@@ -362,8 +362,8 @@ export const defaultTeam = [
 ]
 
 export const defaultWebsiteContent = {
-  companyName: 'AluPro',
-  logoText: 'AluPro',
+  companyName: 'VETRI',
+  logoText: 'VETRI',
   heroTitle: 'Aluminium & uPVC Home Solutions for South Indian Homes',
   heroDescription: 'We design, fabricate and install aluminium and uPVC windows, doors, sliding systems, kitchen cabinets, wardrobes, bathroom solutions and balcony glass for homes across Tamil Nadu.',
   heroServices: ['Aluminium Windows', 'uPVC Windows', 'Sliding Systems', 'Kitchen Cabinets'],
@@ -371,12 +371,12 @@ export const defaultWebsiteContent = {
     'We specialise in high-quality aluminium and uPVC home solutions, including windows, doors, sliding systems, kitchen cabinets, wardrobes, bathroom ventilators and balcony glass. With 10+ years of experience, we deliver products that combine strength, style and practical performance for homes across South India.',
   phone: '+91 98765 43210',
   whatsapp: '+91 98765 43210',
-  email: 'info@alupro.com',
-  address: '123, AluPro Solutions, Coimbatore - 641001, Tamil Nadu, India',
+  email: 'info@vetri.com',
+  address: '123, VETRI Solutions, Coimbatore - 641001, Tamil Nadu, India',
   mapEmbed: '',
   social: { facebook: '#', instagram: '#', youtube: '#', linkedin: '#', whatsapp: '#' },
   stats: { years: '10+', projects: '500+', clients: '300+', quality: '100%' },
-  seo: { title: 'AluPro | Aluminium & uPVC Home Solutions in Tamil Nadu', description: 'Premium aluminium and uPVC windows, doors, sliding systems, kitchen cabinets, wardrobes, bathroom and balcony solutions for modern South Indian homes.' },
+  seo: { title: 'VETRI | Aluminium & uPVC Home Solutions in Tamil Nadu', description: 'Premium aluminium and uPVC windows, doors, sliding systems, kitchen cabinets, wardrobes, bathroom and balcony solutions for modern South Indian homes.' },
   heroImages: [
     serviceAsset('south-indian-aluminium-windows'),
     serviceAsset('south-indian-upvc-windows-doors'),

@@ -2,15 +2,10 @@ export default function BrandLogo({ compact = false }) {
   return (
     <div className="flex items-center gap-2.5">
       <img
-        src="/assets/brand/alupro-logo.png"
-        alt="AluPro Aluminium and uPVC Solutions"
-        className={`${compact ? 'h-11 w-11' : 'h-12 w-12'} rounded-full object-contain bg-white shadow-lg ring-1 ring-white/25`}
+        src={compact ? '/assets/brand/vetri-logo-mark.png' : '/assets/brand/vetri-logo-full.png'}
+        alt="VETRI Aluminium and uPVC Solutions"
+        className={`${compact ? 'h-11 w-11 rounded-full' : 'h-12 w-auto max-w-[190px]'} object-contain`}
       />
-      {!compact && (
-        <span className="font-display font-bold text-lg text-white tracking-tight leading-tight">
-          AluPro
-        </span>
-      )}
     </div>
   )
 }

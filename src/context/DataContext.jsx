@@ -22,7 +22,7 @@ const KEYS = {
   content: 'alupro_content',
   enquiries: 'alupro_enquiries',
   auth: 'alupro_admin_auth',
-  visualRefresh: 'alupro_visual_refresh_20260822_home_solutions',
+  visualRefresh: 'alupro_visual_refresh_20260825_vetri_brand',
 }
 
 function visualRefresh(value, defaults, imageFields = ['image']) {
@@ -50,7 +50,11 @@ function visualRefreshContent(value) {
     heroTitle: defaultWebsiteContent.heroTitle,
     heroDescription: defaultWebsiteContent.heroDescription,
     heroServices: defaultWebsiteContent.heroServices,
+    companyName: defaultWebsiteContent.companyName,
+    logoText: defaultWebsiteContent.logoText,
     aboutContent: defaultWebsiteContent.aboutContent,
+    email: defaultWebsiteContent.email,
+    address: defaultWebsiteContent.address,
     seo: defaultWebsiteContent.seo,
     heroImages: defaultWebsiteContent.heroImages,
     showcaseVideo: defaultWebsiteContent.showcaseVideo,

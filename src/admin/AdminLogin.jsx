@@ -33,7 +33,7 @@ export default function AdminLogin() {
           <div className="flex justify-center mb-3">
             <BrandLogo compact />
           </div>
-          <h1 className="font-display font-bold text-xl text-navy-900">AluPro</h1>
+          <h1 className="font-display font-bold text-xl text-navy-900">VETRI</h1>
           <p className="text-xs text-ink-600 tracking-widest">ADMIN PANEL</p>
         </div>
         <h2 className="font-display font-semibold text-lg text-navy-900 mb-1">Welcome Back!</h2>

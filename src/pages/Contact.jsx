@@ -56,7 +56,7 @@ export default function Contact() {
 
             <div className="rounded-xl overflow-hidden border border-ink-400/10 h-64">
               <iframe
-                title="AluPro location"
+                title={`${content.companyName} location`}
                 width="100%"
                 height="100%"
                 loading="lazy"

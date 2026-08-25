@@ -147,7 +147,7 @@ export default function Home() {
       <section id="about" className="section-py bg-mist-50 overflow-hidden">
         <div className="container-page grid lg:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, x: -26 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <p className="eyebrow">About AluPro</p>
+            <p className="eyebrow">About {content.companyName}</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mt-2">Premium aluminium design, precise fabrication, clean installation.</h2>
             <p className="text-ink-600 mt-5 leading-relaxed">{content.aboutContent}</p>
             <div className="grid sm:grid-cols-2 gap-4 mt-7">
